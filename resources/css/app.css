@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+@import 'style.css';
+@import 'form.css';
+@import 'nav.css';
 [x-cloak] {
     display: none;
 }
