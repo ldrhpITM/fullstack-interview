@@ -19,7 +19,7 @@ class ImageSeeder extends Seeder
                 [
                     'url' => 'https://placehold.co/400.png?text='.$product->name,
                     'imageable_id' => $product->id,
-                    'imageable_type' => 'product',
+                    'imageable_type' => 'App\Models\Admin\Product',
                     'created_at' => now(),
                     'updated_at' => now(),
                 ],

@@ -6,7 +6,9 @@
           <x-application-mark class="block h-9 w-auto"/>
        </a>
 
-
+       <div class="flex-1 hidden md:block">
+        <h1 class="text-white">Test</h1>
+        </div>
        <div class="mx-6 relative hidden md:block">
           @auth
              <x-dropdown align="right" width="48">
