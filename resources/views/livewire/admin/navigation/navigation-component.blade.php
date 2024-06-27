@@ -1,4 +1,3 @@
-
 <header class="bg-gray-900 sticky  top-0" x-data="" style="z-index: 900">
     <div class="container flex items-center h-16 justify-between md:justify-start">
 
@@ -28,14 +27,7 @@
                    <x-dropdown-link href="{{ route('profile.show') }}">
                          {{ __('Profile') }}
                    </x-dropdown-link>
-                   <x-dropdown-link href="{{ route('orders.index') }}">
-                      {{ __('My orders') }}
-                   </x-dropdown-link>
-                   @role('admin')
-                   <x-dropdown-link href="{{ route('admin.index') }}">
-                      {{ __('Administrator') }}
-                   </x-dropdown-link>
-                   @endrole
+
                    <div class="border-t border-gray-100"></div>
 
                    <!-- Authentication -->
@@ -66,10 +58,11 @@
              </x-dropdown>
           @endauth
       </div>
-      <div class="hidden md:block">
+      <div class=" md:block">
          @livewire('admin.cart.cart-component')
       </div>
-
     </div>
 
- </header>
+</header>
+
+

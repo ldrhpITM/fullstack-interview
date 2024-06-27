@@ -10,7 +10,7 @@ use Gloudemans\Shoppingcart\Facades\Cart;
         $stock=$product->stock;
         return $stock;
     }
-    function qty_added($product_id) //determinando cantidad de productos
+    function qty_added($product_id) //determinando cantidad de producto agregado al carrito
     {
         //recuperando los productos del carrito
         $cart=Cart::content();
@@ -24,45 +24,9 @@ use Gloudemans\Shoppingcart\Facades\Cart;
         }
     }
 
-    function qty_available($product_id) //stock aun disponible  para  agregar al carrito
+    function qty_available($product_id) //obtener el stock aun disponible  para  agregar al carrito
     {
         return quantity($product_id) - qty_added($product_id);
     }
 
-    /*function discount($item)
-    {
-        $product=Product::findOrFail($item->id);
-        $qtyAvailable= qty_available($item->id);
-
-        $product->quantity=$qtyAvailable;
-        $product->save();
-
-    }
-
-    function increase($item)
-    {
-        $product=Product::findOrFail($item->id);
-        $quantity= quantity($item->id, $item->options->color_id, $item->options->size_id)+$item->qty;
-
-        if ($item->options->size_id) {
-
-            $size=Size::findOrFail($item->options->size_id);
-            $size->colors()->detach($item->options->color_id);
-
-            $size->colors()->attach([
-                $item->options->color_id=>['quantity'=>$quantity]
-            ]);
-
-        }else if ($item->options->color_id) {
-
-            $product->colors()->detach($item->options->color_id);
-
-            $product->colors()->attach([
-                $item->options->color_id=>['quantity'=>$quantity]
-            ]);
-        }else{
-            $product->quantity=$quantity;
-            $product->save();
-        }
-    }*/
 ?>
