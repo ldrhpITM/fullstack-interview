@@ -24,7 +24,7 @@ export default {
                 orange:colors.orange,
                 lime:colors.lime,
                 green:colors.green,
-                lightBlue:colors.lightBlue,
+                sky:colors.sky,
                 blue:colors.blue,
                 indigo:colors.indigo,
                 purple:colors.purple,

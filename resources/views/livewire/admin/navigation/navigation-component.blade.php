@@ -1,5 +1,5 @@
 
-<header class="bg-gray-900 sticky  top-0" x-data="dropdown()" style="z-index: 900">
+<header class="bg-gray-900 sticky  top-0" x-data="" style="z-index: 900">
     <div class="container flex items-center h-16 justify-between md:justify-start">
 
        <a href="/" class="mx-6">
@@ -7,7 +7,7 @@
        </a>
 
        <div class="flex-1 hidden md:block">
-        <h1 class="text-white">Test</h1>
+        <h1 class="text-white">Fullstack interview main</h1>
         </div>
        <div class="mx-6 relative hidden md:block">
           @auth

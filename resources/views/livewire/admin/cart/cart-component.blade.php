@@ -1,12 +1,13 @@
 <div>
-    <x-dropdown width="96">
+     <x-dropdown width="96">
         <x-slot name="trigger">
             <span class="relative inline-block cursor-pointer">
                 <x-cart color="white" size="30"/>
                 @if (Cart::count())
-                    <span class="absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-red-100 transform translate-x-1/2 -translate-y-1/2 bg-red-600 rounded-full">{{ Cart::count() }}</span>
+                    <span class="absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-blue-100 transform
+                        translate-x-1/2 -translate-y-1/2 bg-blue-600 rounded-full">{{ Cart::count() }}</span>
                 @else
-                    <span class="absolute top-0 right-0 inline-block w-2 h-2 transform translate-x-1/2 -translate-y-1/2 bg-red-600 rounded-full"></span>
+                    <span class="absolute top-0 right-0 inline-block w-2 h-2 transform translate-x-1/2 -translate-y-1/2 bg-blue-600 rounded-full"></span>
                 @endif
 
 
@@ -22,16 +23,8 @@
                             <div class="flex">
                                 <p>Cant: {{ $item->qty }} </p>
 
-                                @isset($item->options['color'])
-                                <p class="mx-1"> | Color: {{ __($item->options->color) }}</p>
-                                @endisset
-
-                                @isset($item->options['size'])
-                                <p> | Talla: {{ $item->options->size }}</p>
-                                @endisset
-
                             </div>
-                            <p>MX {{ $item->price }}</p>
+                            <p>$ {{ $item->price }}</p>
                         </article>
                     </li>
                 @empty
@@ -42,11 +35,12 @@
             </ul>
             @if (Cart::count())
                 <div class="py-2 px-3">
-                    <p class="text-lg text-gray-800 mt-2 mb-2"><span class="font-bold">Total:</span> MX {{ Cart::subtotal() }}</p>
-                    <x-button-enlace color="lightBlue" class="w-full" href="{{  route('shopping-cart') }}">Ir al carrito de compras</x-button-enlace>
+                    <p class="text-lg text-gray-800 mt-2 mb-2"><span class="font-bold">Total:</span> $ {{ Cart::subtotal() }}</p>
+                    <x-button-enlace class="w-full bg-blue-900 text-center" href="{{ route('carrito.compras.index') }}">Ir al carrito de compras</x-button-enlace>
                 </div>
             @endif
 
         </x-slot>
     </x-dropdown>
+
 </div>

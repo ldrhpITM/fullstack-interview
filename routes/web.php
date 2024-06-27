@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Admin\Product\ProductController;
+use App\Livewire\Admin\ShoppingCart\ShoppingCartComponent;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -15,3 +17,6 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+
+Route::get('producto/{id}',[ProductController::class,'consultaProducto'])->name('consulta.producto');
+route::get('carrito-de-compras', ShoppingCartComponent::class)->name('carrito.compras.index');
